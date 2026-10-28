@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/playfair-display/wght-italic.css";
+
+@theme {
+  /* Cores medidas nas peças da marca */
+  --color-brand: #1a66ff;
+  --color-brand-light: #3c89ff;
+  --color-brand-dark: #0b47cc;
+  --color-night: #0a2560;
+  --color-ink: #4a5b80;
+  --color-line: #e1e8f5;
+  --color-mist: #eff6ff;
+  --color-whatsapp: #25d366;
+
+  --font-display: "Playfair Display Variable", Georgia, serif;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+
+  --tracking-label: 0.2em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@utility bg-brand-gradient {
+  background:
+    radial-gradient(60% 45% at 78% 18%, rgb(74 147 255 / 0.9), transparent 70%),
+    linear-gradient(180deg, #2a75ff 0%, #1d6dff 55%, #1154e0 100%);
+}
+
+@utility label {
+  @apply text-xs font-semibold tracking-label uppercase sm:text-sm;
+}

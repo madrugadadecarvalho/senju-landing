@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://senju.ao/sitemap.xml
